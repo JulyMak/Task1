@@ -48,6 +48,9 @@ public class Subarray {
             Res left = findMaxSubarray(a, low, mid);
             Res right = findMaxSubarray(a, mid + 1, high);
             Res cross = findMaxCrossingSubarray(a, low, mid, high);
+            if (left.sum < 0 && right.sum < 0 && cross.sum < 0) {
+                return new Res(0, 0, 0);
+            }
             if (left.sum >= right.sum && left.sum >= cross.sum) {
                 return new Res(left.leftIndex, left.rightIndex, left.sum);
             } else if (right.sum >= left.sum && right.sum >= cross.sum) {

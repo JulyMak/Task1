@@ -36,7 +36,7 @@ public class SubarrayTest {
         int[] prices = {5, 4, 3, 2, 1};
         int left = 0;
         int right = 0;
-        int sum = -1;
+        int sum = 0;
         check(prices, left, right, sum);
     }
 
